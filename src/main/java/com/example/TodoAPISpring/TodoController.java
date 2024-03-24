@@ -19,8 +19,8 @@ public class TodoController {
     }
 
     @GetMapping("/todos")
-    public List<Todo> getTodos() {
-        return todoList;
+    public ResponseEntity<List<Todo>> getTodos() {
+        return ResponseEntity.status(HttpStatus.OK).body(todoList);
     }
 
     @PostMapping("/todos")
