@@ -13,40 +13,40 @@ public class Todo {
 		this.userId = userId;
 	}
 
-	public void setId(int id){
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public int getId(){
+	public int getId() {
 		return id;
 	}
 
-	public void setCompleted(boolean completed){
+	public void setCompleted(boolean completed) {
 		this.completed = completed;
 	}
 
-	public boolean isCompleted(){
+	public boolean isCompleted() {
 		return completed;
 	}
 
-	public void setTitle(String title){
+	public void setTitle(String title) {
 		this.title = title;
 	}
 
-	public String getTitle(){
+	public String getTitle() {
 		return title;
 	}
 
-	public void setUserId(int userId){
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 
-	public int getUserId(){
+	public int getUserId() {
 		return userId;
 	}
 
 	@Override
- 	public String toString(){
+ 	public String toString() {
 		return 
 			"Todo{" + 
 			"id = '" + id + '\'' + 
