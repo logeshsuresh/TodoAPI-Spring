@@ -21,8 +21,15 @@ public class TodoController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Todo>> getTodos() {
-        return ResponseEntity.status(HttpStatus.OK).body(todoList);
+    public ResponseEntity<List<Todo>> getTodos(@RequestParam(required = false) Boolean isCompleted) {
+        if (isCompleted == null) { return ResponseEntity.ok(todoList); }
+        List<Todo> todos = new ArrayList<>();
+        for (Todo todo : todoList) {
+            if (todo.isCompleted() == isCompleted) {
+                todos.add(todo);
+            }
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(todos);
     }
 
     @PostMapping
