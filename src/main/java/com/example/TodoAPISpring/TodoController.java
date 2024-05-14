@@ -27,7 +27,7 @@ public class TodoController {
 
     @GetMapping
     public ResponseEntity<List<Todo>> getTodos(@RequestParam(required = false) Boolean isCompleted) {
-        System.out.println(todoService .doSomething());
+        System.out.println(todoService.doSomething());
         if (isCompleted == null) { return ResponseEntity.ok(todoList); }
         List<Todo> todos = new ArrayList<>();
         for (Todo todo : todoList) {
@@ -51,8 +51,6 @@ public class TodoController {
                 return ResponseEntity.ok(todo);
             }
         }
-        Map<String, Object> errorMessage = new HashMap<>();
-        errorMessage.put("message", "ID not found");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(TODO_NOT_FOUND);
     }
 
